@@ -194,18 +194,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdr06"]
 size = Vector2(198.5, 20)
 
-[sub_resource type="Curve2D" id="Curve2D_dmpbk"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 598, 975, 0, 0, 0, 0, 266, 970)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_r66ge"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 65, 941, 0, 0, 0, 0, 268, 988, 0, 0, 0, 0, 411, 987, 0, 0, 0, 0, 559, 957, 0, 0, 0, 0, 679, 884, 0, 0, 0, 0, 535, 838, 0, 0, 0, 0, 359, 840, 0, 0, 0, 0, 137, 838)
-}
-point_count = 8
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
@@ -213,19 +201,8 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_oi5um")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("2_d31q8")]
 position = Vector2(75, 622)
-script = ExtResource("1_vdr06")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 7.5)
-shape = SubResource("RectangleShape2D_t355s")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_otbr7")
-animation = &"walk"
-frame_progress = 0.27308425
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(93, 645)
@@ -253,3 +230,5 @@ speed = 1.0
 
 [node name="LevelEnd" parent="." instance=ExtResource("5_d31q8")]
 position = Vector2(1823, 109)
+
+[node name="Player2HUD" parent="." instance=ExtResource("5_dmpbk")]
