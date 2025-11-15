@@ -3,8 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
-const BASE_POSITION : Vector2 = Vector2(75, 622)
-
+const SCREEN_BORDERS : Vector2 = Vector2(1920, 850)
 var facing_right = true
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -12,9 +11,9 @@ var facing_right = true
 func _process(_delta: float) -> void:
 	sprite_logic()
 	
-	#Reset position on fall
-	if position.y >= 856:
-		position = BASE_POSITION
+	#Reset position when out of screen
+	if position.y < 0 || position.y >= SCREEN_BORDERS.y || position.x < 0 || position.x >= SCREEN_BORDERS.x:
+		get_tree().reload_current_scene()
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
