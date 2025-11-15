@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://fm01c6cpdors"]
+
+[ext_resource type="Script" uid="uid://bpbxg8y3rhi75" path="res://Scripts/water.gd" id="1_v8kou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_seble"]
+
+[node name="Water" type="Area2D"]
+script = ExtResource("1_v8kou")
+debug_color = Color(1, 0, 0, 0.5019608)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6.395, 6.395)
+shape = SubResource("RectangleShape2D_seble")
+one_way_collision_margin = 0.0
