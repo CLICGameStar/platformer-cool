@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="PlatformerCool"
+run/main_scene="uid://bx8jht25bvaps"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Sprites/icon.svg"
 
 [rendering]
 
