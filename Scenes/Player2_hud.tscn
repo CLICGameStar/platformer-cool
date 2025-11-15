@@ -1,0 +1,136 @@
+[gd_scene load_steps=8 format=3 uid="uid://du0o73op1m1gg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07780"]
+bg_color = Color(0.42534778, 0.40349057, 0.3940537, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d31q8"]
+bg_color = Color(0.63, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.16, 0.16, 0.16, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_saai4"]
+bg_color = Color(0.44894928, 2.5088154e-06, 1.2513996e-06, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.16, 0.16, 0.16, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 12
+shadow_size = 12
+shadow_offset = Vector2(-4, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl3m6"]
+bg_color = Color(0.6313726, 0, 0, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.92535293, 0.9253528, 0.9253529, 1)
+border_blend = true
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 12
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmpbk"]
+bg_color = Color(0.15116373, 0.39258227, 1.92523e-07, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.16, 0.16, 0.16, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r66ge"]
+bg_color = Color(0.20057532, 7.70092e-07, 0.93405205, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.16, 0.16, 0.16, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oi5um"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.16, 0.16, 0.16, 1)
+corner_radius_top_left = 48
+corner_radius_top_right = 48
+corner_radius_bottom_right = 48
+corner_radius_bottom_left = 48
+corner_detail = 12
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.021000002
+anchor_bottom = 0.037
+offset_top = 856.0
+offset_right = 1880.68
+offset_bottom = 1040.04
+theme_override_styles/panel = SubResource("StyleBoxFlat_07780")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_top = 904.0
+offset_right = 1920.0
+offset_bottom = 1032.0
+theme_override_constants/separation = 128
+alignment = 1
+
+[node name="First" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_d31q8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_saai4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d31q8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_nl3m6")
+
+[node name="Second" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dmpbk")
+
+[node name="Third" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_r66ge")
+
+[node name="Fourth" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_oi5um")
