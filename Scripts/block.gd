@@ -1,26 +1,38 @@
-extends Node2D
-class_name Block
+extends Path2D
 
-@export var offset = Vector2(0, -320)
-@export var duration = 5.0
+
+@export var loop = true
+@export var speed = 5.0
+@export var speed_scale = 1.0
+
+@onready var path = $PathFollow2D
+@onready var animation = $AnimationPlayer
+
+var ratio =0
+var midAnimRatio = 1
+var start_point = 0
 
 func _ready():
-	pass
-	
+		pass
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("Button_1") && !animation.is_playing():
+		if path.progress_ratio == 1:
+			animation.play("move", -1, -speed, true)
+		else:
+			animation.play("move", -1, speed, false)
+		
 
-func start_tween():
-	var tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	tween.set_loops().set_parallel(false)
-	tween.tween_property($AnimatableBody2d, "position", offset, duration / 2)
-	tween.tween_property($AnimatableBody2d, "position", Vector2.ZERO, duration / 2)
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Button_1"):
-		print("test")
-		start_tween()
+		
 	
 	
-func _physics_process(delta: float) -> void:
-	pass
 	
+#	if path.progress_ratio == midAnimRatio:
+#		animation.pause()
+#		midAnimRatio = (midAnimRatio +1) % 2
+#		print(midAnimRatio)
+#	if Input.is_action_just_pressed("Button_1"):
+#		animation.play("move")
+#		path.progress_ratio=ratio
+			
+	
+		

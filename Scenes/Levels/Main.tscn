@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bx8jht25bvaps"]
+[gd_scene load_steps=20 format=3 uid="uid://bx8jht25bvaps"]
 
 [ext_resource type="Texture2D" uid="uid://dkahlygyyfbmw" path="res://Assets/Sprites/icon.svg" id="1_a113d"]
 [ext_resource type="Script" uid="uid://cwyglcc1dn5n0" path="res://Scripts/character_body_2d.gd" id="1_vdr06"]
 [ext_resource type="Texture2D" uid="uid://cqddil01g4vdg" path="res://Assets/Sprites/GameStarCube/CubeGameStar.png" id="2_07780"]
 [ext_resource type="Texture2D" uid="uid://bm7cpka5yaj7r" path="res://Assets/Sprites/GameStarCube/characterIdle.png" id="2_t355s"]
+[ext_resource type="PackedScene" uid="uid://ciqdesbnmum7p" path="res://Scenes/Levels/platform.tscn" id="5_d31q8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t355s"]
 size = Vector2(36, 49)
@@ -85,7 +86,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdr06"]
-size = Vector2(195.25, 20)
+size = Vector2(198.5, 20)
+
+[sub_resource type="Curve2D" id="Curve2D_dmpbk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 598, 975, 0, 0, 0, 0, 266, 970)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_r66ge"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 65, 941, 0, 0, 0, 0, 268, 988, 0, 0, 0, 0, 411, 987, 0, 0, 0, 0, 559, 957, 0, 0, 0, 0, 679, 884, 0, 0, 0, 0, 535, 838, 0, 0, 0, 0, 359, 840, 0, 0, 0, 0, 137, 838)
+}
+point_count = 8
 
 [node name="Node2D" type="Node2D"]
 
@@ -113,16 +126,12 @@ position = Vector2(-0.25, -1.9073486e-06)
 scale = Vector2(1.5546875, 0.15624997)
 texture = ExtResource("1_a113d")
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
-position = Vector2(-49, -214.99998)
-script = ExtResource("3_t355s")
+[node name="Path2D" parent="." instance=ExtResource("5_d31q8")]
+position = Vector2(-49, 12)
+curve = SubResource("Curve2D_dmpbk")
+speed = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
-position = Vector2(-14.375, 83)
-scale = Vector2(0.2400006, 1)
-shape = SubResource("RectangleShape2D_vdr06")
-
-[node name="Icon" type="Sprite2D" parent="RigidBody2D2/CollisionShape2D"]
-position = Vector2(0.74999887, -1.9073486e-06)
-scale = Vector2(1.5585936, 0.15624997)
-texture = ExtResource("1_a113d")
+[node name="Path2D2" parent="." instance=ExtResource("5_d31q8")]
+position = Vector2(31, -140)
+curve = SubResource("Curve2D_r66ge")
+speed = 1.0
