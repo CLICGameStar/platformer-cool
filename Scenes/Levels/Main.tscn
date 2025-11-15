@@ -191,6 +191,13 @@ animations = [{
 "name": &"walk",
 "speed": 20.0
 }]
+[gd_scene load_steps=7 format=3 uid="uid://bx8jht25bvaps"]
+
+[ext_resource type="Texture2D" uid="uid://dkahlygyyfbmw" path="res://Assets/Sprites/icon.svg" id="1_a113d"]
+[ext_resource type="Texture2D" uid="uid://k50kglg8ouio" path="res://Assets/Sprites/Backgrounds/spring.png" id="1_oi5um"]
+[ext_resource type="PackedScene" uid="uid://cbu4rj585njyo" path="res://Scenes/player.tscn" id="2_d31q8"]
+[ext_resource type="PackedScene" uid="uid://ctuwgusan4cjf" path="res://Scenes/Objects/level_end.tscn" id="5_d31q8"]
+[ext_resource type="PackedScene" uid="uid://du0o73op1m1gg" path="res://Scenes/Player2_hud.tscn" id="5_dmpbk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdr06"]
 size = Vector2(198.5, 20)
@@ -214,19 +221,8 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_oi5um")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("2_d31q8")]
 position = Vector2(75, 622)
-script = ExtResource("1_vdr06")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 7.5)
-shape = SubResource("RectangleShape2D_t355s")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_otbr7")
-animation = &"walk"
-frame_progress = 0.27308425
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(93, 645)
@@ -240,17 +236,7 @@ position = Vector2(-0.25, -1.9073486e-06)
 scale = Vector2(1.5546875, 0.15624997)
 texture = ExtResource("1_a113d")
 
-[node name="Player2HUD" parent="." instance=ExtResource("5_dmpbk")]
-
 [node name="LevelEnd" parent="." instance=ExtResource("5_d31q8")]
 position = Vector2(1823, 109)
 
-[node name="Path2D" parent="." instance=ExtResource("9_saai4")]
-position = Vector2(3, -339)
-curve = SubResource("Curve2D_nl3m6")
-
-[node name="Path2D2" parent="." instance=ExtResource("9_saai4")]
-position = Vector2(468, -317)
-curve = SubResource("Curve2D_saai4")
-
-[node name="Path2D3" parent="." instance=ExtResource("9_saai4")]
+[node name="Player2HUD" parent="." instance=ExtResource("5_dmpbk")]

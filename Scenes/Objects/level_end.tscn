@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctuwgusan4cjf"]
+[gd_scene load_steps=4 format=3 uid="uid://ctuwgusan4cjf"]
 
 [ext_resource type="Script" uid="uid://bdwg0x7c6met1" path="res://Scripts/level_end.gd" id="1_tmf22"]
+[ext_resource type="Texture2D" uid="uid://ccvwr5miqoxpg" path="res://Assets/Sprites/oak_door.png" id="2_w3531"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w3531"]
 
@@ -11,5 +12,9 @@ metadata/_custom_type_script = "uid://bdwg0x7c6met1"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_w3531")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_w3531")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
