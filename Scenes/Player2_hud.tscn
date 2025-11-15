@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://du0o73op1m1gg"]
+[gd_scene load_steps=15 format=3 uid="uid://du0o73op1m1gg"]
 
 [ext_resource type="Texture2D" uid="uid://dg6vdrpaihgmd" path="res://Assets/Sprites/Buttons/RedButton.png" id="1_suhav"]
 [ext_resource type="Texture2D" uid="uid://c5qo2dju8rhx8" path="res://Assets/Sprites/Buttons/RedPressed.png" id="2_41kjq"]
@@ -15,28 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://uro1mh8opu2k" path="res://Assets/Sprites/Buttons/PurplePressed.png" id="13_o1dv4"]
 [ext_resource type="Texture2D" uid="uid://dkahlygyyfbmw" path="res://Assets/Sprites/icon.svg" id="14_506v8"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07780"]
-bg_color = Color(0.42352942, 0.40392157, 0.39215687, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-
 [node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="Panel" type="Panel" parent="."]
-offset_top = 880.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_07780")
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_top = 916.0
+offset_top = 886.0
 offset_right = 1920.0
-offset_bottom = 1044.0
+offset_bottom = 1014.0
 theme_override_constants/separation = 128
 alignment = 1
 
