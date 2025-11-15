@@ -1,13 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx8jht25bvaps"]
+[gd_scene load_steps=11 format=3 uid="uid://bx8jht25bvaps"]
 
 [ext_resource type="Texture2D" uid="uid://dkahlygyyfbmw" path="res://Assets/Sprites/icon.svg" id="1_a113d"]
 [ext_resource type="Texture2D" uid="uid://k50kglg8ouio" path="res://Assets/Sprites/Backgrounds/spring.png" id="1_oi5um"]
 [ext_resource type="PackedScene" uid="uid://cbu4rj585njyo" path="res://Scenes/player.tscn" id="2_d31q8"]
 [ext_resource type="PackedScene" uid="uid://ctuwgusan4cjf" path="res://Scenes/Objects/level_end.tscn" id="5_d31q8"]
 [ext_resource type="PackedScene" uid="uid://du0o73op1m1gg" path="res://Scenes/Player2_hud.tscn" id="5_dmpbk"]
+[ext_resource type="PackedScene" uid="uid://ciqdesbnmum7p" path="res://Scenes/Levels/platform.tscn" id="9_saai4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdr06"]
 size = Vector2(198.5, 20)
+
+[sub_resource type="Curve2D" id="Curve2D_dmpbk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 213, 963, -26.573418, -33.65966, 26.573418, 33.65966, 396, 972, -12.4009285, -67.31932, 12.4009285, 67.31932, 337, 1074, 0, 0, 0, 0, 444, 1166, -30.116539, 19.487173, 30.116539, -19.487173, 623, 1150, 3.5431223, 51.375275, -3.5431223, -51.375275, 699, 1041, 0, 0, 0, 0, 639, 855)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_r66ge"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 211, 966, 0, 0, 0, 0, -3, 976, 0, 0, 0, 0, -35, 1079, 0, 0, 0, 0, -6, 1228, 0, 0, 0, 0, 68, 1370, 0, 0, 0, 0, 232, 1440, 0, 0, 0, 0, 387, 1389, 0, 0, 0, 0, 429, 1206, 0, 0, 0, 0, 452, 994)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_oi5um"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 206, 966, 7, 22, -7, -22, 156, 877, -8, 32, 8, -32, 130, 775, -18, 7, 18, -7, 208, 686, 0, 0, 0, 0, 328, 630, 0, 0, 0, 0, 419, 613)
+}
+point_count = 6
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,3 +54,26 @@ texture = ExtResource("1_a113d")
 position = Vector2(1823, 109)
 
 [node name="Player2HUD" parent="." instance=ExtResource("5_dmpbk")]
+
+[node name="Path2D" parent="." instance=ExtResource("9_saai4")]
+position = Vector2(26, -308)
+curve = SubResource("Curve2D_dmpbk")
+speed = 1.0
+
+[node name="Path2D2" parent="." instance=ExtResource("9_saai4")]
+position = Vector2(648, -246)
+speed = 1.0
+
+[node name="Path2D3" parent="." instance=ExtResource("9_saai4")]
+position = Vector2(1043, -585)
+curve = SubResource("Curve2D_r66ge")
+speed = 1.0
+
+[node name="Path2D5" parent="." instance=ExtResource("9_saai4")]
+position = Vector2(1193, -456)
+curve = SubResource("Curve2D_oi5um")
+speed = 1.0
+
+[node name="Path2D6" parent="." instance=ExtResource("9_saai4")]
+position = Vector2(1601, -796)
+speed = 1.0
