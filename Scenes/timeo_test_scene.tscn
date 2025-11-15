@@ -1,111 +1,110 @@
-[gd_scene load_steps=34 format=3 uid="uid://bx8jht25bvaps"]
 
-[ext_resource type="Texture2D" uid="uid://dkahlygyyfbmw" path="res://Assets/Sprites/icon.svg" id="1_a113d"]
-[ext_resource type="Texture2D" uid="uid://k50kglg8ouio" path="res://Assets/Sprites/Backgrounds/spring.png" id="1_oi5um"]
-[ext_resource type="Script" uid="uid://cwyglcc1dn5n0" path="res://Scripts/character_body_2d.gd" id="1_vdr06"]
-[ext_resource type="Texture2D" uid="uid://cqddil01g4vdg" path="res://Assets/Sprites/GameStarCube/CubeGameStar.png" id="2_07780"]
-[ext_resource type="Texture2D" uid="uid://bm7cpka5yaj7r" path="res://Assets/Sprites/GameStarCube/characterIdle.png" id="2_t355s"]
-[ext_resource type="PackedScene" uid="uid://ciqdesbnmum7p" path="res://Scenes/Levels/platform.tscn" id="5_d31q8"]
-[ext_resource type="Texture2D" uid="uid://i7fpxbkcii7o" path="res://Assets/Sprites/GameStarCube/characterWalk.png" id="4_d31q8"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/level_end.tscn" id="5_d31q8"]
-[ext_resource type="PackedScene" path="res://Scenes/Player2_hud.tscn" id="5_dmpbk"]
+[gd_scene load_steps=32 format=3 uid="uid://bsmavgp0d1g8e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t355s"]
+[ext_resource type="PackedScene" uid="uid://cg4j1ddvkb6oh" path="res://Scenes/objects/water.tscn" id="1_7ats4"]
+[ext_resource type="PackedScene" uid="uid://dyfqy30idujbg" path="res://Scenes/objects/Ground.tscn" id="2_2xcks"]
+[ext_resource type="Script" uid="uid://cwyglcc1dn5n0" path="res://Scripts/character_body_2d.gd" id="3_1ju5e"]
+[ext_resource type="Texture2D" uid="uid://cqddil01g4vdg" path="res://Assets/Sprites/GameStarCube/CubeGameStar.png" id="4_77nxj"]
+[ext_resource type="Texture2D" uid="uid://bm7cpka5yaj7r" path="res://Assets/Sprites/GameStarCube/characterIdle.png" id="5_143ni"]
+[ext_resource type="Texture2D" uid="uid://i7fpxbkcii7o" path="res://Assets/Sprites/GameStarCube/characterWalk.png" id="6_77nxj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_143ni"]
 size = Vector2(36, 49)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otbr7"]
-atlas = ExtResource("2_07780")
+atlas = ExtResource("4_77nxj")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d31q8"]
-atlas = ExtResource("2_t355s")
+atlas = ExtResource("5_143ni")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmpbk"]
-atlas = ExtResource("2_t355s")
+atlas = ExtResource("5_143ni")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r66ge"]
-atlas = ExtResource("2_t355s")
+atlas = ExtResource("5_143ni")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oi5um"]
-atlas = ExtResource("2_t355s")
+atlas = ExtResource("5_143ni")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_saai4"]
-atlas = ExtResource("2_t355s")
+atlas = ExtResource("5_143ni")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nl3m6"]
-atlas = ExtResource("2_t355s")
+atlas = ExtResource("5_143ni")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ih0k"]
-atlas = ExtResource("2_t355s")
+atlas = ExtResource("5_143ni")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mv52a"]
-atlas = ExtResource("2_t355s")
+atlas = ExtResource("5_143ni")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wxa7"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dm2qe"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t65c0"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnw2c"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8nowq"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rxbgi"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l26ol"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sy3ms"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f502e"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8plj"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmii4"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(640, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ukf1"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(704, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0uald"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(768, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5poa3"]
-atlas = ExtResource("4_d31q8")
+atlas = ExtResource("6_77nxj")
 region = Rect2(832, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_otbr7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0ivi"]
+
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -143,6 +142,7 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+
 }, {
 "frames": [{
 "duration": 1.0,
@@ -192,64 +192,27 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdr06"]
-size = Vector2(198.5, 20)
+[node name="TimeoTestScene" type="Node2D"]
 
-[sub_resource type="Curve2D" id="Curve2D_dmpbk"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 598, 975, 0, 0, 0, 0, 266, 970)
-}
-point_count = 2
+[node name="Water" parent="." instance=ExtResource("1_7ats4")]
+position = Vector2(1414, 784)
+scale = Vector2(2.279995, 1)
+angular_speed_deg = 0.0
 
-[sub_resource type="Curve2D" id="Curve2D_r66ge"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 65, 941, 0, 0, 0, 0, 268, 988, 0, 0, 0, 0, 411, 987, 0, 0, 0, 0, 559, 957, 0, 0, 0, 0, 679, 884, 0, 0, 0, 0, 535, 838, 0, 0, 0, 0, 359, 840, 0, 0, 0, 0, 137, 838)
-}
-point_count = 8
-
-[node name="Node2D" type="Node2D"]
-
-[node name="Background" type="TextureRect" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("1_oi5um")
+[node name="Ground" parent="." instance=ExtResource("2_2xcks")]
+position = Vector2(846, 844)
+scale = Vector2(80.63999, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(75, 622)
-script = ExtResource("1_vdr06")
+
+script = ExtResource("3_1ju5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, 7.5)
-shape = SubResource("RectangleShape2D_t355s")
+shape = SubResource("RectangleShape2D_143ni")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_otbr7")
+sprite_frames = SubResource("SpriteFrames_d0ivi")
 animation = &"walk"
-frame_progress = 0.27308425
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(93, 645)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(21.75, 41)
-shape = SubResource("RectangleShape2D_vdr06")
-
-[node name="Icon" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
-position = Vector2(-0.25, -1.9073486e-06)
-scale = Vector2(1.5546875, 0.15624997)
-texture = ExtResource("1_a113d")
-
-[node name="Path2D" parent="." instance=ExtResource("5_d31q8")]
-position = Vector2(-49, 12)
-curve = SubResource("Curve2D_dmpbk")
-speed = 2.0
-
-[node name="Path2D2" parent="." instance=ExtResource("5_d31q8")]
-position = Vector2(31, -140)
-curve = SubResource("Curve2D_r66ge")
-speed = 1.0
-[node name="Player2HUD" parent="." instance=ExtResource("5_dmpbk")]
-
-[node name="LevelEnd" parent="." instance=ExtResource("5_d31q8")]
-position = Vector2(1823, 109)
