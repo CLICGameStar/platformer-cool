@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bx8jht25bvaps"]
+[gd_scene load_steps=17 format=3 uid="uid://bx8jht25bvaps"]
 
 [ext_resource type="Texture2D" uid="uid://dkahlygyyfbmw" path="res://Assets/Sprites/icon.svg" id="1_a113d"]
 [ext_resource type="Script" uid="uid://cwyglcc1dn5n0" path="res://Scripts/character_body_2d.gd" id="1_vdr06"]
@@ -6,10 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bm7cpka5yaj7r" path="res://Assets/Sprites/GameStarCube/characterIdle.png" id="2_t355s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t355s"]
-size = Vector2(43, 49)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_07780"]
-load_path = "res://.godot/imported/CubeGameStar.jpg-6a91dd06cfa4fcb255aceb326d126b8b.ctex"
+size = Vector2(36, 49)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otbr7"]
 atlas = ExtResource("2_07780")
@@ -93,31 +90,25 @@ size = Vector2(198.5, 20)
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(81, 894)
 script = ExtResource("1_vdr06")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(2, 2)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-0.5, 6.5)
+position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_t355s")
-
-[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(0, -1.1920929e-07)
-scale = Vector2(0.145, 0.145)
-texture = SubResource("CompressedTexture2D_07780")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_otbr7")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(93, 975)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(21.75, 41)
 shape = SubResource("RectangleShape2D_vdr06")
 
-[node name="Icon" type="Sprite2D" parent="RigidBody2D/CollisionShape2D"]
+[node name="Icon" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
 position = Vector2(-0.25, -1.9073486e-06)
 scale = Vector2(1.5546875, 0.15624997)
 texture = ExtResource("1_a113d")
