@@ -1,15 +1,17 @@
-extends Area2D
+extends Node2D
 
 @export var flow_dir: Vector2 = Vector2.RIGHT
-@export var is_iced: bool = false
+@export var is_iced: bool = true
 @export var angular_speed_deg: float = 90.0
-@export var debug_color: Color = Color(1, 0, 0, 1)
+@export var water_color: Color = Color(0.029, 0.267, 1.0, 0.894)
+@export var ice_color: Color = Color(0.416, 0.6, 1.0, 0.871)
 
 var bodies_in_flow: Array[Node] = []
 
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	$WaterFlow.body_entered.connect(_on_body_entered)
+	$WaterFlow.body_exited.connect(_on_body_exited)
+	melt()
 
 func _on_body_entered(body: Node) -> void:
 	print("player entered water")
@@ -18,6 +20,13 @@ func _on_body_entered(body: Node) -> void:
 func _on_body_exited(body: Node) -> void:
 	print("player left water")
 	bodies_in_flow.erase(body)
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("Debug_1"):
+		if is_iced:
+			melt()
+		else:
+			freeze()
 
 func _physics_process(delta: float) -> void:
 	if not is_iced:
@@ -40,42 +49,14 @@ func _push_body(body: Node, strength: float, delta: float) -> void:
 	elif "velocity" in body:
 		body.velocity += push * delta
 
-func _draw():
-	var cs := $CollisionShape2D
-	if cs == null or cs.shape == null:
-		return
+func melt():
+	is_iced = false
+	$IceBlock.process_mode = Node.PROCESS_MODE_DISABLED
+	$WaterFlow.process_mode = Node.PROCESS_MODE_INHERIT
+	$ColorRect.color = water_color
 
-	var rect := cs.shape as RectangleShape2D
-	if rect:
-		var half := rect.size * 0.5
-
-		# Corners in the RectangleShape2D's local space
-		var p0 := Vector2(-half.x, -half.y)
-		var p1 := Vector2( half.x, -half.y)
-		var p2 := Vector2( half.x,  half.y)
-		var p3 := Vector2(-half.x,  half.y)
-
-		# Transform them to global space using the CollisionShape2D
-		var gt: Transform2D = cs.global_transform
-		var g0 := gt * p0
-		var g1 := gt * p1
-		var g2 := gt * p2
-		var g3 := gt * p3
-
-		# Convert back to this Area2D's local space for drawing
-		var l0 := to_local(g0)
-		var l1 := to_local(g1)
-		var l2 := to_local(g2)
-		var l3 := to_local(g3)
-
-		# Draw the outline
-		draw_line(l0, l1, debug_color, 2.0)
-		draw_line(l1, l2, debug_color, 2.0)
-		draw_line(l2, l3, debug_color, 2.0)
-		draw_line(l3, l0, debug_color, 2.0)
-
-	# Flow direction debug line
-	if flow_dir.length() > 0:
-		var dir := flow_dir.normalized()
-		var end := dir * 200.0
-		draw_line(Vector2.ZERO, end, Color.RED, 2.0)
+func freeze():
+	is_iced = true
+	$WaterFlow.process_mode = Node.PROCESS_MODE_DISABLED
+	$IceBlock.process_mode = Node.PROCESS_MODE_INHERIT
+	$ColorRect.color = ice_color

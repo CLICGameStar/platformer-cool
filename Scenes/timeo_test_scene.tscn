@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://bsmavgp0d1g8e"]
 
-[ext_resource type="PackedScene" uid="uid://fm01c6cpdors" path="res://Scenes/objects/water.tscn" id="1_7ats4"]
-[ext_resource type="PackedScene" uid="uid://bu227rluu1ibs" path="res://Scenes/objects/Ground.tscn" id="2_2xcks"]
+[ext_resource type="PackedScene" uid="uid://c3rhj1bupgra6" path="res://Scenes/objects/water.tscn" id="1_7ats4"]
+[ext_resource type="PackedScene" path="res://Scenes/objects/Ground.tscn" id="2_2xcks"]
 [ext_resource type="Script" uid="uid://cwyglcc1dn5n0" path="res://Scripts/player.gd" id="3_1ju5e"]
 [ext_resource type="Texture2D" uid="uid://cqddil01g4vdg" path="res://Assets/Sprites/GameStarCube/CubeGameStar.png" id="4_77nxj"]
 [ext_resource type="Texture2D" uid="uid://bm7cpka5yaj7r" path="res://Assets/Sprites/GameStarCube/characterIdle.png" id="5_143ni"]
@@ -103,7 +103,6 @@ atlas = ExtResource("6_77nxj")
 region = Rect2(832, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d0ivi"]
-
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -141,7 +140,6 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
-
 }, {
 "frames": [{
 "duration": 1.0,
@@ -204,7 +202,6 @@ scale = Vector2(80.63999, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(75, 622)
-
 script = ExtResource("3_1ju5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]

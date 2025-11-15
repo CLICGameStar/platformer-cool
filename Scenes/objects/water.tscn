@@ -1,14 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://fm01c6cpdors"]
+[gd_scene load_steps=3 format=3 uid="uid://c3rhj1bupgra6"]
 
 [ext_resource type="Script" uid="uid://bpbxg8y3rhi75" path="res://Scripts/water.gd" id="1_v8kou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seble"]
+size = Vector2(20.017591, 20.017591)
 
-[node name="Water" type="Area2D"]
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_v8kou")
-debug_color = Color(1, 0, 0, 0.5019608)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="WaterFlow" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterFlow"]
 scale = Vector2(6.395, 6.395)
 shape = SubResource("RectangleShape2D_seble")
 one_way_collision_margin = 0.0
+
+[node name="IceBlock" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IceBlock"]
+position = Vector2(4.656613e-10, -4.656613e-10)
+scale = Vector2(6.395, 6.395)
+shape = SubResource("RectangleShape2D_seble")
+one_way_collision_margin = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -64.0
+offset_top = -63.999996
+offset_right = -24.0
+offset_bottom = -23.999996
+scale = Vector2(3.2, 3.2)
