@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
+const BASE_POSITION : Vector2 = Vector2(75, 622)
 
 var facing_right = true
 
@@ -10,6 +11,10 @@ var facing_right = true
 
 func _process(_delta: float) -> void:
 	sprite_logic()
+	
+	#Reset position on fall
+	if position.y >= 856:
+		position = BASE_POSITION
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
