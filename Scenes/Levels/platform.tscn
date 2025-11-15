@@ -48,15 +48,14 @@ script = ExtResource("1_ga8qe")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(252, 970)
-rotation = 3.1415927
 progress = 390.0
+rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 position = Vector2(252, 970)
-rotation = -3.1415925
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(-40, -3.080017)
