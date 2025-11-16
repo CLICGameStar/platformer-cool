@@ -1,2 +1,3 @@
 # platformer-cool
-Coop and versus platformer game for the Game* borne
+Coop and versus platformer game for the Game* arcade machine. 
+Currently a work in progress...
