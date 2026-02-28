@@ -59,9 +59,11 @@ func melt():
 	$IceBlock.process_mode = Node.PROCESS_MODE_DISABLED
 	$WaterFlow.process_mode = Node.PROCESS_MODE_INHERIT
 	$ColorRect.color = water_color
+	$TextureRect.visible = true
 
 func freeze():
 	is_iced = true
 	$WaterFlow.process_mode = Node.PROCESS_MODE_DISABLED
 	$IceBlock.process_mode = Node.PROCESS_MODE_INHERIT
 	$ColorRect.color = ice_color
+	$TextureRect.visible = false

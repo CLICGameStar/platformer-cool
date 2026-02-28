@@ -62,6 +62,7 @@ offset_top = -63.999996
 offset_right = -24.0
 offset_bottom = -23.999996
 scale = Vector2(3.2, 3.2)
+color = Color(0.02745098, 0.26666668, 1, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=376271304]
 offset_left = -64.0
