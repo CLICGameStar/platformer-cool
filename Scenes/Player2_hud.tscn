@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://du0o73op1m1gg"]
+[gd_scene format=3 uid="uid://du0o73op1m1gg"]
 
 [ext_resource type="Texture2D" uid="uid://dg6vdrpaihgmd" path="res://Assets/Sprites/Buttons/RedButton.png" id="1_suhav"]
-[ext_resource type="Script" uid="uid://du25bv1rb6ghn" path="res://Scenes/player_2_hud.gd" id="1_vfr8x"]
+[ext_resource type="Script" uid="uid://du25bv1rb6ghn" path="res://Scripts/player_2_hud.gd" id="1_vfr8x"]
 [ext_resource type="Texture2D" uid="uid://c5qo2dju8rhx8" path="res://Assets/Sprites/Buttons/RedPressed.png" id="2_41kjq"]
 [ext_resource type="Texture2D" uid="uid://d0eqrl2qkhp1x" path="res://Assets/Sprites/Buttons/FocusedButton.png" id="3_suhav"]
 [ext_resource type="Texture2D" uid="uid://c8jog72jsswfi" path="res://Assets/Sprites/Buttons/GreenButton.png" id="4_rp3gv"]
@@ -16,59 +16,59 @@
 [ext_resource type="Texture2D" uid="uid://uro1mh8opu2k" path="res://Assets/Sprites/Buttons/PurplePressed.png" id="13_o1dv4"]
 [ext_resource type="Texture2D" uid="uid://cxohw3rn2yg6c" path="res://Assets/Sprites/winter_icon.png" id="15_vfr8x"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1943083624]
 script = ExtResource("1_vfr8x")
 
-[node name="Buttons" type="HBoxContainer" parent="."]
+[node name="Buttons" type="HBoxContainer" parent="." unique_id=429081075]
 offset_top = 886.0
 offset_right = 1920.0
 offset_bottom = 1014.0
 theme_override_constants/separation = 128
 alignment = 1
 
-[node name="Red" type="TextureButton" parent="Buttons"]
+[node name="Red" type="TextureButton" parent="Buttons" unique_id=1434808912]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture_normal = ExtResource("1_suhav")
 texture_pressed = ExtResource("2_41kjq")
 texture_focused = ExtResource("3_suhav")
 
-[node name="Orange" type="TextureButton" parent="Buttons"]
+[node name="Orange" type="TextureButton" parent="Buttons" unique_id=316292079]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture_normal = ExtResource("10_va0pv")
 texture_pressed = ExtResource("11_506v8")
 texture_focused = ExtResource("3_suhav")
 
-[node name="Yellow" type="TextureButton" parent="Buttons"]
+[node name="Yellow" type="TextureButton" parent="Buttons" unique_id=486780950]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture_normal = ExtResource("8_66lbc")
 texture_pressed = ExtResource("9_v4x8x")
 texture_focused = ExtResource("3_suhav")
 
-[node name="Green" type="TextureButton" parent="Buttons"]
+[node name="Green" type="TextureButton" parent="Buttons" unique_id=1361059868]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture_normal = ExtResource("4_rp3gv")
 texture_pressed = ExtResource("5_62qa4")
 texture_focused = ExtResource("3_suhav")
 
-[node name="Blue" type="TextureButton" parent="Buttons"]
+[node name="Blue" type="TextureButton" parent="Buttons" unique_id=1011834856]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture_normal = ExtResource("6_uw330")
 texture_pressed = ExtResource("7_ttjjl")
 texture_focused = ExtResource("3_suhav")
 
-[node name="Purple" type="TextureButton" parent="Buttons"]
+[node name="Purple" type="TextureButton" parent="Buttons" unique_id=1861596140]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 texture_normal = ExtResource("12_vfr8x")
 texture_pressed = ExtResource("13_o1dv4")
 texture_focused = ExtResource("3_suhav")
 
-[node name="SeasonIndicator" type="TextureRect" parent="."]
+[node name="SeasonIndicator" type="TextureRect" parent="." unique_id=1409325284]
 custom_minimum_size = Vector2(128, 128)
 anchors_preset = -1
 anchor_left = 0.021000002
