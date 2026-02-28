@@ -5,6 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://cbu4rj585njyo" path="res://Scenes/player.tscn" id="3_4nh8f"]
 [ext_resource type="PackedScene" uid="uid://ctuwgusan4cjf" path="res://Scenes/Objects/level_end.tscn" id="4_etd3f"]
 [ext_resource type="PackedScene" uid="uid://du0o73op1m1gg" path="res://Scenes/Player2_hud.tscn" id="5_d3u4r"]
+[ext_resource type="Texture2D" uid="uid://5caac7b0jcoh" path="res://Assets/Sprites/Spike.png" id="6_l0mwj"]
+[ext_resource type="Script" uid="uid://chk05o2g00gjb" path="res://Scripts/spikes.gd" id="7_etd3f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nh8f"]
+texture = ExtResource("6_l0mwj")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.46650696, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_etd3f"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_4nh8f")
 
 [node name="Level" type="Node2D" unique_id=1966597664]
 script = ExtResource("1_5lnup")
@@ -13,6 +26,7 @@ script = ExtResource("1_5lnup")
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_l0mwj")
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=762219858 instance=ExtResource("3_4nh8f")]
 position = Vector2(75, 622)
@@ -22,4 +36,9 @@ position = Vector2(1825, 120)
 
 [node name="Player2HUD" parent="." unique_id=1943083624 instance=ExtResource("5_d3u4r")]
 
+[node name="Spikes" type="TileMapLayer" parent="." unique_id=16896656]
+tile_set = SubResource("TileSet_etd3f")
+script = ExtResource("7_etd3f")
+
+[connection signal="wind" from="." to="Player" method="change_wind_force"]
 [connection signal="new_season" from="Player2HUD" to="." method="change_season"]
