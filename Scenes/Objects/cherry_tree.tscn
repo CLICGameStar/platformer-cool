@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dg5ye41djb80f"]
+
+[ext_resource type="Script" uid="uid://c0bablxfyfyl0" path="res://Scripts/cherry_tree.gd" id="1_vinsm"]
+[ext_resource type="PackedScene" uid="uid://kxsg2j1ij5w7" path="res://Scenes/Objects/cherry.tscn" id="2_p01kb"]
+[ext_resource type="Texture2D" uid="uid://bhx8gb7hwo3oy" path="res://Assets/Sprites/cerisier.png" id="3_v2f0m"]
+
+[node name="cherry_tree" type="Node2D" unique_id=1441613479]
+script = ExtResource("1_vinsm")
+cherry_object = ExtResource("2_p01kb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=968056681]
+z_index = -1
+offset_left = -79.0
+offset_top = -159.0
+offset_right = 81.0
+offset_bottom = 1.0
+texture = ExtResource("3_v2f0m")
+expand_mode = 1

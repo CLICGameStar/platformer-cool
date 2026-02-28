@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://kxsg2j1ij5w7"]
+
+[ext_resource type="Script" uid="uid://bakiu0gi73wll" path="res://Scripts/cherry.gd" id="1_eruwf"]
+[ext_resource type="Texture2D" uid="uid://t7q2lfbaquo4" path="res://Assets/Sprites/Cerises.png" id="2_bnkoe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eruwf"]
+size = Vector2(40, 40)
+
+[node name="Cherry" type="Node2D" unique_id=227201394]
+script = ExtResource("1_eruwf")
+
+[node name="CherryArea" type="Area2D" parent="." unique_id=37437184]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CherryArea" unique_id=1334215426]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_eruwf")
+
+[node name="TextureRect" type="TextureRect" parent="CherryArea" unique_id=1239069519]
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = 10.0
+texture = ExtResource("2_bnkoe")
+expand_mode = 1

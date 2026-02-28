@@ -1,9 +1,42 @@
 [gd_scene format=3 uid="uid://fm01c6cpdors"]
 
 [ext_resource type="Script" uid="uid://bpbxg8y3rhi75" path="res://Scripts/water.gd" id="1_v8kou"]
+[ext_resource type="Texture2D" uid="uid://c4s6xr7o4psoi" path="res://Assets/Sprites/animations/bulles d'air1.png" id="2_tmv5t"]
+[ext_resource type="Texture2D" uid="uid://c32n4b0yrxqmj" path="res://Assets/Sprites/animations/bulles d'air2.png" id="3_v2nm1"]
+[ext_resource type="Texture2D" uid="uid://b88bfsnr2p884" path="res://Assets/Sprites/animations/bulles d'air3.png" id="4_dm6yx"]
+[ext_resource type="Texture2D" uid="uid://cuwrr0mmavi60" path="res://Assets/Sprites/animations/bulles d'air4.png" id="5_nnmj7"]
+[ext_resource type="Texture2D" uid="uid://bawfqdd5l2iff" path="res://Assets/Sprites/animations/bulles d'air5.png" id="6_vyycs"]
+[ext_resource type="Texture2D" uid="uid://csadxebl7sk2o" path="res://Assets/Sprites/animations/bulles d'air6.png" id="7_6ia2q"]
+[ext_resource type="Texture2D" uid="uid://dhs86viawjhfs" path="res://Assets/Sprites/animations/bulles d'air7.png" id="8_a61ik"]
+[ext_resource type="Texture2D" uid="uid://c3k8o8up2x8kc" path="res://Assets/Sprites/animations/bulles d'air8.png" id="9_4mynn"]
+[ext_resource type="Texture2D" uid="uid://d2h8uqwrh6e4e" path="res://Assets/Sprites/animations/bulles d'air9.png" id="10_rj6nv"]
+[ext_resource type="Texture2D" uid="uid://dq6ksoy6jjxcj" path="res://Assets/Sprites/animations/bulles d'air10.png" id="11_t71ip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seble"]
 size = Vector2(20.017591, 20.017591)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_hm51f"]
+frames = 10
+frame_0/texture = ExtResource("2_tmv5t")
+frame_0/duration = 0.25
+frame_1/texture = ExtResource("3_v2nm1")
+frame_1/duration = 0.25
+frame_2/texture = ExtResource("4_dm6yx")
+frame_2/duration = 0.25
+frame_3/texture = ExtResource("5_nnmj7")
+frame_3/duration = 0.25
+frame_4/texture = ExtResource("6_vyycs")
+frame_4/duration = 0.25
+frame_5/texture = ExtResource("7_6ia2q")
+frame_5/duration = 0.25
+frame_6/texture = ExtResource("8_a61ik")
+frame_6/duration = 0.25
+frame_7/texture = ExtResource("9_4mynn")
+frame_7/duration = 0.25
+frame_8/texture = ExtResource("10_rj6nv")
+frame_8/duration = 0.25
+frame_9/texture = ExtResource("11_t71ip")
+frame_9/duration = 0.25
 
 [node name="Node2D" type="Node2D" unique_id=1268120202]
 script = ExtResource("1_v8kou")
@@ -29,3 +62,11 @@ offset_top = -63.999996
 offset_right = -24.0
 offset_bottom = -23.999996
 scale = Vector2(3.2, 3.2)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=376271304]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("AnimatedTexture_hm51f")
+stretch_mode = 1

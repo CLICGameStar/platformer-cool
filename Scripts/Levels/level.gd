@@ -8,12 +8,15 @@ const BACKGROUNDS : Dictionary[Player2.Seasons,CompressedTexture2D] = {Player2.S
 signal melt
 signal freeze
 signal wind(force: int)
+signal show_cherries
+signal hide_cherries
 
 
 func _ready():
 	for button_name in unused_buttons:
 		$Player2HUD.hide_button(button_name)
 	connect_water()
+	connect_cherries()
 
 
 func change_season(season: Player2.Seasons):
@@ -34,22 +37,31 @@ func connect_water():
 		melt.connect(waterflow.melt)
 		freeze.connect(waterflow.freeze))
 
+func connect_cherries():
+	get_tree().get_nodes_in_group("cherry_trees").map(func(cherry_tree):
+		show_cherries.connect(cherry_tree.enter_spring)
+		hide_cherries.connect(cherry_tree.leave_spring))
+
 func spring():
 	wind.emit(0)
+	show_cherries.emit()
 
 
 func summer():
 	wind.emit(0)
 	melt.emit()
+	hide_cherries.emit()
 
 
 func fall():
 	wind.emit(-50)
+	hide_cherries.emit()
 
 
 func winter():
 	wind.emit(0)
 	freeze.emit()
+	hide_cherries.emit()
 
 
 func change_background(season: Player2.Seasons):
