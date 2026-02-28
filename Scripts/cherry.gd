@@ -8,8 +8,7 @@ func _ready() -> void:
 	$CherryArea.body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body: Node) -> void:
-	if body.has_method("change_speed"):
+	if body.has_method("change_speed") and body.has_method("change_jump"):
 		body.change_speed(SPEED_MODIFICATOR, TIME)
-	if body.has_method("change_jump"):
 		body.change_jump(JUMP_MODIFICATOR, TIME)
-	self.queue_free()
+		self.queue_free()
