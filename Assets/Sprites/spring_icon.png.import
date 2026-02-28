@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mllpjpwkw261"
-path="res://.godot/imported/logo Soleil.png-417be397afba678201f87cd0fa474be4.ctex"
+uid="uid://bbt0trqg6ef5l"
+path="res://.godot/imported/spring_icon.png-efbf1b7f8e372d323b937bb7b886ff9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/logo Soleil.png"
-dest_files=["res://.godot/imported/logo Soleil.png-417be397afba678201f87cd0fa474be4.ctex"]
+source_file="res://Assets/Sprites/spring_icon.png"
+dest_files=["res://.godot/imported/spring_icon.png-efbf1b7f8e372d323b937bb7b886ff9e.ctex"]
 
 [params]
 

@@ -25,7 +25,7 @@ point_count = 6
 [node name="Level" unique_id=1966597664 instance=ExtResource("1_5jgm0")]
 unused_buttons = Array[String](["Orange", "Yellow", "Purple"])
 
-[node name="Platforms" type="Node" parent="." index="4" unique_id=1661304837]
+[node name="Platforms" type="Node" parent="." index="5" unique_id=1661304837]
 
 [node name="Platform1" parent="Platforms" index="0" unique_id=574195171 instance=ExtResource("5_f3nwb")]
 position = Vector2(26, -308)

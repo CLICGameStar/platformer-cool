@@ -7,7 +7,8 @@ extends Node2D
 @export var ice_color: Color = Color(0.416, 0.6, 1.0, 0.871)
 @export var strength := 1050.0
 var bodies_in_flow: Array[Node] = []
-@onready var animation = $AnimatedSprite2D
+
+
 func _ready() -> void:
 	$WaterFlow.body_entered.connect(_on_body_entered)
 	$WaterFlow.body_exited.connect(_on_body_exited)

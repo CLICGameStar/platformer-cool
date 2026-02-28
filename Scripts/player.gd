@@ -45,6 +45,13 @@ func _physics_process(delta: float) -> void:
 	velocity += water_force
 	water_force = Vector2.ZERO
 	move_and_slide()
+	
+	#Checking for spikes
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i)
+		if collision.get_collider().name == "Spikes":
+			get_tree().reload_current_scene()
+			return
 
 func sprite_logic():
 	# Orientation

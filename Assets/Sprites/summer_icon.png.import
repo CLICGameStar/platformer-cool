@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbt0trqg6ef5l"
-path="res://.godot/imported/Logo printemps.png-acad14ea4f77652915930a531e677904.ctex"
+uid="uid://mllpjpwkw261"
+path="res://.godot/imported/summer_icon.png-3cfbe629f1681eb6d91fd35d6a9e9f7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Logo printemps.png"
-dest_files=["res://.godot/imported/Logo printemps.png-acad14ea4f77652915930a531e677904.ctex"]
+source_file="res://Assets/Sprites/summer_icon.png"
+dest_files=["res://.godot/imported/summer_icon.png-3cfbe629f1681eb6d91fd35d6a9e9f7e.ctex"]
 
 [params]
 

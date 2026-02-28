@@ -16,7 +16,7 @@ point_count = 4
 script = ExtResource("2_5iseo")
 unused_buttons = Array[String](["Orange", "Yellow", "Purple", "Green", "Blue"])
 
-[node name="Platforms" type="Node" parent="." index="4" unique_id=1887890146]
+[node name="Platforms" type="Node" parent="." index="5" unique_id=1887890146]
 
 [node name="ImmovablePlatform1" parent="Platforms" index="0" unique_id=1698517060 instance=ExtResource("7_u5eb6")]
 position = Vector2(404, 816)
@@ -38,7 +38,7 @@ position = Vector2(562, -494)
 curve = SubResource("Curve2D_smuj1")
 speed = 3.0
 
-[node name="Waterflows" type="Node" parent="." index="5" unique_id=1278974169]
+[node name="Waterflows" type="Node" parent="." index="6" unique_id=1278974169]
 
 [node name="Waterflow1" parent="Waterflows" index="0" unique_id=1268120202 groups=["waterflows"] instance=ExtResource("8_lmdar")]
 position = Vector2(364, 678)

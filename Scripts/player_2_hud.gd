@@ -14,6 +14,8 @@ enum Seasons {SPRING, SUMMER, FALL, WINTER}
 
 var current_season: Seasons = Seasons.SPRING
 
+const SEASON_INDICATORS : Dictionary[Seasons, CompressedTexture2D] = {Seasons.SPRING: preload("res://Assets/Sprites/spring_icon.png"), Seasons.SUMMER: preload("res://Assets/Sprites/summer_icon.png"), Seasons.FALL: preload("res://Assets/Sprites/fall_icon.png"), Seasons.WINTER: preload("res://Assets/Sprites/winter_icon.png")}
+
 
 func _process(_delta):
 	if Input.is_action_just_pressed("spring_button"):
@@ -31,6 +33,7 @@ func change_season(season: Seasons) -> void:
 		return
 	current_season = season
 	new_season.emit(season)
+	$SeasonIndicator.texture = SEASON_INDICATORS[season]
 
 
 func hide_button(button_name: String):
