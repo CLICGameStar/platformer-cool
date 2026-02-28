@@ -5,7 +5,7 @@ extends Node2D
 #@export var angular_speed_deg: float = 90.0
 @export var water_color: Color = Color(0.029, 0.267, 1.0, 0.894)
 @export var ice_color: Color = Color(0.416, 0.6, 1.0, 0.871)
-
+@export var strength := 1050.0
 var bodies_in_flow: Array[Node] = []
 
 func _ready() -> void:
@@ -16,6 +16,8 @@ func _ready() -> void:
 func _on_body_entered(body: Node) -> void:
 	#print("player entered water")
 	bodies_in_flow.append(body)
+	if body is CharacterBody2D:
+		body.velocity /= 2 
 
 func _on_body_exited(body: Node) -> void:
 	#print("player left water")
@@ -33,7 +35,7 @@ func _physics_process(delta: float) -> void:
 		#var angular_speed_rad := deg_to_rad(angular_speed_deg)
 		#flow_dir = flow_dir.rotated(angular_speed_rad * delta).normalized()
 
-		var strength := 1500.0
+		
 		for body in bodies_in_flow:
 			_push_body(body, strength, delta)
 
