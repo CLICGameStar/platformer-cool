@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxum6pu5fccg2"]
+[gd_scene format=3 uid="uid://cxum6pu5fccg2"]
 
 [ext_resource type="Script" uid="uid://8lt44vm7tyib" path="res://Scripts/Levels/level2.gd" id="1_lmdar"]
 [ext_resource type="Texture2D" uid="uid://k50kglg8ouio" path="res://Assets/Sprites/Backgrounds/spring.png" id="2_lmdar"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://du0o73op1m1gg" path="res://Scenes/Player2_hud.tscn" id="5_ao4h1"]
 [ext_resource type="PackedScene" uid="uid://ciqdesbnmum7p" path="res://Scenes/movable_platform.tscn" id="6_ngp1c"]
 [ext_resource type="PackedScene" uid="uid://bpef3jyqe5ccf" path="res://Scenes/immovable_platform.tscn" id="7_u5eb6"]
-[ext_resource type="PackedScene" uid="uid://c3rhj1bupgra6" path="res://Scenes/Objects/water.tscn" id="8_lmdar"]
+[ext_resource type="PackedScene" uid="uid://fm01c6cpdors" path="res://Scenes/Objects/water.tscn" id="8_lmdar"]
 
 [sub_resource type="Curve2D" id="Curve2D_d1swa"]
 _data = {
@@ -15,54 +15,53 @@ _data = {
 }
 point_count = 4
 
-[node name="Level2" type="Node2D"]
+[node name="Level2" type="Node2D" unique_id=1625442341]
 script = ExtResource("1_lmdar")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1812963534]
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_lmdar")
 
-[node name="Player" parent="." instance=ExtResource("3_d1swa")]
+[node name="Player" parent="." unique_id=1053051453 instance=ExtResource("3_d1swa")]
 position = Vector2(75, 622)
 
-[node name="LevelEnd" parent="." instance=ExtResource("4_ipaot")]
+[node name="LevelEnd" parent="." unique_id=488417466 instance=ExtResource("4_ipaot")]
 position = Vector2(1825, 120)
 
-[node name="Player2HUD" parent="." instance=ExtResource("5_ao4h1")]
+[node name="Player2HUD" parent="." unique_id=670130091 instance=ExtResource("5_ao4h1")]
 
-[node name="Platforms" type="Node" parent="."]
+[node name="Platforms" type="Node" parent="." unique_id=186153398]
 
-[node name="ImmovablePlatform1" parent="Platforms" instance=ExtResource("7_u5eb6")]
-position = Vector2(1336, 816)
-scale = Vector2(9.5, 1)
+[node name="ImmovablePlatform1" parent="Platforms" unique_id=934680952 instance=ExtResource("7_u5eb6")]
+position = Vector2(404, 816)
 
-[node name="ImmovablePlatform2" parent="Platforms" instance=ExtResource("7_u5eb6")]
+[node name="ImmovablePlatform2" parent="Platforms" unique_id=123223879 instance=ExtResource("7_u5eb6")]
 position = Vector2(1863, 167)
 
-[node name="ImmovablePlatform3" parent="Platforms" instance=ExtResource("7_u5eb6")]
+[node name="ImmovablePlatform3" parent="Platforms" unique_id=1420685270 instance=ExtResource("7_u5eb6")]
 position = Vector2(155, 688)
 
-[node name="ImmovablePlatform4" parent="Platforms" instance=ExtResource("7_u5eb6")]
+[node name="ImmovablePlatform4" parent="Platforms" unique_id=1069304084 instance=ExtResource("7_u5eb6")]
 position = Vector2(625, 512)
 
-[node name="ImmovablePlatform 5" parent="Platforms" instance=ExtResource("7_u5eb6")]
+[node name="ImmovablePlatform 5" parent="Platforms" unique_id=2063655196 instance=ExtResource("7_u5eb6")]
 position = Vector2(1639, 563)
 
-[node name="Path2D" parent="Platforms" instance=ExtResource("6_ngp1c")]
+[node name="Path2D" parent="Platforms" unique_id=467062866 instance=ExtResource("6_ngp1c")]
 position = Vector2(562, -494)
 curve = SubResource("Curve2D_d1swa")
 speed = 3.0
 
-[node name="waterflows" type="Node" parent="."]
+[node name="waterflows" type="Node" parent="." unique_id=426314686]
 
-[node name="Waterflow1" parent="waterflows" instance=ExtResource("8_lmdar")]
+[node name="Waterflow1" parent="waterflows" unique_id=581412077 instance=ExtResource("8_lmdar")]
 position = Vector2(364, 678)
 scale = Vector2(0.5, 2)
 flow_dir = Vector2(0, -1)
 is_iced = false
 
-[node name="Waterflow2" parent="waterflows" instance=ExtResource("8_lmdar")]
+[node name="Waterflow2" parent="waterflows" unique_id=1243471341 instance=ExtResource("8_lmdar")]
 position = Vector2(1666, 395)
 scale = Vector2(0.5, 2.5)
 flow_dir = Vector2(0, -1)

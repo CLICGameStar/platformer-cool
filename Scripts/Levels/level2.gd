@@ -8,6 +8,7 @@ func _ready():
 	$Player2HUD.hide_button("Purple")
 	$Player2HUD.hide_button("Green")
 	$Player2HUD.hide_button("Blue")
+	$Player2HUD.change_season(Player2.Seasons.WINTER)
 	
 func change_background(season: Player2.Seasons):
 	$Background.texture = backgrounds[season]
