@@ -2,7 +2,13 @@ extends Node2D
 
 const SPAWN_DELAY = 25
 
+enum Sides {
+	LEFT,
+	RIGHT
+}
+
 @export var cherry_object: PackedScene
+@export var cherry: Sides
 var spawned_cherry: Node2D
 var spawn_counter: float = SPAWN_DELAY
 var spring: bool = false
@@ -21,7 +27,7 @@ func _process(delta: float) -> void:
 func spawn_cherry() -> void:
 	spawned_cherry = cherry_object.instantiate() as Node2D
 	add_child(spawned_cherry)
-	spawned_cherry.position = Vector2.ZERO
+	spawned_cherry.position = Vector2.LEFT * 25 if cherry == Sides.LEFT else Vector2.RIGHT * 25 
 
 func enter_spring() -> void:
 	spring = true

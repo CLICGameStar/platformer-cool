@@ -16,18 +16,22 @@ offset_bottom = 1080.0
 texture = ExtResource("6_qdttf")
 
 [node name="Player" parent="." unique_id=1583328109 instance=ExtResource("2_op4il")]
-position = Vector2(422, 449)
+position = Vector2(388, 724)
 
 [node name="platform1" parent="." unique_id=332638482 instance=ExtResource("1_xqh54")]
-position = Vector2(400, 521)
+position = Vector2(366, 796)
 
 [node name="platform2" parent="." unique_id=1278754942 instance=ExtResource("1_xqh54")]
-position = Vector2(1080, 522)
+position = Vector2(1046, 804)
 
 [node name="cherry_tree" parent="." unique_id=1441613479 groups=["cherry_trees"] instance=ExtResource("4_hyqb8")]
-position = Vector2(363, 503)
+position = Vector2(284, 789)
+cherry = 1
 
 [node name="Player2HUD" parent="." unique_id=1943083624 instance=ExtResource("5_6f0eb")]
+
+[node name="cherry_tree2" parent="." unique_id=1434806405 groups=["cherry_trees"] instance=ExtResource("4_hyqb8")]
+position = Vector2(1067, 796)
 
 [connection signal="wind" from="." to="Player" method="change_wind_force"]
 [connection signal="new_season" from="Player2HUD" to="." method="change_season"]
