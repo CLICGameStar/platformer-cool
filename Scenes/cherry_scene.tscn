@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cytifsp3oe6s4"]
+
+[ext_resource type="PackedScene" uid="uid://bpef3jyqe5ccf" path="res://Scenes/immovable_platform.tscn" id="1_xqh54"]
+[ext_resource type="PackedScene" uid="uid://cbu4rj585njyo" path="res://Scenes/player.tscn" id="2_op4il"]
+[ext_resource type="PackedScene" uid="uid://kxsg2j1ij5w7" path="res://Scenes/Objects/cherry.tscn" id="3_op4il"]
+
+[node name="CherryScene" type="Node2D" unique_id=1377195164]
+
+[node name="Player" parent="." unique_id=1583328109 instance=ExtResource("2_op4il")]
+position = Vector2(417, 784)
+
+[node name="platform1" parent="." unique_id=332638482 instance=ExtResource("1_xqh54")]
+position = Vector2(395, 856)
+
+[node name="platform2" parent="." unique_id=1278754942 instance=ExtResource("1_xqh54")]
+position = Vector2(1075, 857)
+
+[node name="cherry" parent="." unique_id=423759237 instance=ExtResource("3_op4il")]
+position = Vector2(282, 795)

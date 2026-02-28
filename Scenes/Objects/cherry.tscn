@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://kxsg2j1ij5w7"]
+
+[ext_resource type="Script" uid="uid://bakiu0gi73wll" path="res://Scenes/Objects/cherry.gd" id="1_eruwf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eruwf"]
+size = Vector2(40, 40)
+
+[node name="Cherry" type="Node2D" unique_id=227201394]
+script = ExtResource("1_eruwf")
+
+[node name="CherryArea" type="Area2D" parent="." unique_id=37437184]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CherryArea" unique_id=1334215426]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_eruwf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1294163638]
+offset_left = -18.0
+offset_top = -19.0
+offset_right = 22.0
+offset_bottom = 21.0
