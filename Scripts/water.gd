@@ -11,7 +11,7 @@ var bodies_in_flow: Array[Node] = []
 func _ready() -> void:
 	$WaterFlow.body_entered.connect(_on_body_entered)
 	$WaterFlow.body_exited.connect(_on_body_exited)
-	animation.play("default")
+	#animation.play("default")
 	melt()
 
 func _on_body_entered(body: Node) -> void:
