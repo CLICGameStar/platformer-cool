@@ -9,6 +9,8 @@ signal blue
 signal purple
 
 signal wind(force: int)
+signal freeze
+signal melt
 signal new_season(season: Seasons)
 
 enum Seasons {SPRING, SUMMER, FALL, WINTER}
@@ -37,10 +39,12 @@ func change_season(season: Seasons) -> void:
 			wind.emit(0)
 		Seasons.SUMMER:
 			wind.emit(0)
+			melt.emit()
 		Seasons.FALL:
 			wind.emit(-50)
 		Seasons.WINTER:
 			wind.emit(0)
+			freeze.emit()
 
 
 func hide_button(button_name: String):

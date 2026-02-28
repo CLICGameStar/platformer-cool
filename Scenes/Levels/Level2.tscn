@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxum6pu5fccg2"]
+
+[ext_resource type="Script" uid="uid://8lt44vm7tyib" path="res://Scripts/Levels/level2.gd" id="1_lmdar"]
+[ext_resource type="Texture2D" uid="uid://k50kglg8ouio" path="res://Assets/Sprites/Backgrounds/spring.png" id="2_lmdar"]
+[ext_resource type="PackedScene" uid="uid://cbu4rj585njyo" path="res://Scenes/player.tscn" id="3_d1swa"]
+[ext_resource type="PackedScene" uid="uid://ctuwgusan4cjf" path="res://Scenes/Objects/level_end.tscn" id="4_ipaot"]
+[ext_resource type="PackedScene" uid="uid://du0o73op1m1gg" path="res://Scenes/Player2_hud.tscn" id="5_ao4h1"]
+[ext_resource type="PackedScene" uid="uid://ciqdesbnmum7p" path="res://Scenes/movable_platform.tscn" id="6_ngp1c"]
+[ext_resource type="PackedScene" uid="uid://bpef3jyqe5ccf" path="res://Scenes/immovable_platform.tscn" id="7_u5eb6"]
+[ext_resource type="PackedScene" uid="uid://c3rhj1bupgra6" path="res://Scenes/Objects/water.tscn" id="8_lmdar"]
+
+[sub_resource type="Curve2D" id="Curve2D_d1swa"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 239, 968, -70.15383, -27.282047, 70.15383, 27.282047, 336, 1094, -40.92307, 9.7435875, 40.92307, -9.7435875, 589, 1092, 0, 0, 0, 0, 757, 1022)
+}
+point_count = 4
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_lmdar")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_lmdar")
+
+[node name="Player" parent="." instance=ExtResource("3_d1swa")]
+position = Vector2(75, 622)
+
+[node name="LevelEnd" parent="." instance=ExtResource("4_ipaot")]
+position = Vector2(1825, 120)
+
+[node name="Player2HUD" parent="." instance=ExtResource("5_ao4h1")]
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="ImmovablePlatform1" parent="Platforms" instance=ExtResource("7_u5eb6")]
+position = Vector2(1336, 816)
+scale = Vector2(9.5, 1)
+
+[node name="ImmovablePlatform2" parent="Platforms" instance=ExtResource("7_u5eb6")]
+position = Vector2(1863, 167)
+
+[node name="ImmovablePlatform3" parent="Platforms" instance=ExtResource("7_u5eb6")]
+position = Vector2(155, 688)
+
+[node name="ImmovablePlatform4" parent="Platforms" instance=ExtResource("7_u5eb6")]
+position = Vector2(625, 512)
+
+[node name="ImmovablePlatform 5" parent="Platforms" instance=ExtResource("7_u5eb6")]
+position = Vector2(1639, 563)
+
+[node name="Path2D" parent="Platforms" instance=ExtResource("6_ngp1c")]
+position = Vector2(562, -494)
+curve = SubResource("Curve2D_d1swa")
+speed = 3.0
+
+[node name="waterflows" type="Node" parent="."]
+
+[node name="Waterflow1" parent="waterflows" instance=ExtResource("8_lmdar")]
+position = Vector2(364, 678)
+scale = Vector2(0.5, 2)
+flow_dir = Vector2(0, -1)
+is_iced = false
+
+[node name="Waterflow2" parent="waterflows" instance=ExtResource("8_lmdar")]
+position = Vector2(1666, 395)
+scale = Vector2(0.5, 2.5)
+flow_dir = Vector2(0, -1)
+is_iced = false
+
+[connection signal="freeze" from="Player2HUD" to="waterflows/Waterflow1" method="freeze"]
+[connection signal="freeze" from="Player2HUD" to="waterflows/Waterflow2" method="freeze"]
+[connection signal="melt" from="Player2HUD" to="waterflows/Waterflow1" method="melt"]
+[connection signal="melt" from="Player2HUD" to="waterflows/Waterflow2" method="melt"]
+[connection signal="new_season" from="Player2HUD" to="." method="change_background"]
+[connection signal="red" from="Player2HUD" to="Platforms/Path2D" method="move"]
+[connection signal="wind" from="Player2HUD" to="Player" method="change_wind_force"]

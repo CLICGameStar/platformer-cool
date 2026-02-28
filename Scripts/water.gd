@@ -1,8 +1,8 @@
 extends Node2D
 
-@export var flow_dir: Vector2 = Vector2.RIGHT
+@export var flow_dir: Vector2
 @export var is_iced: bool = true
-@export var angular_speed_deg: float = 90.0
+#@export var angular_speed_deg: float = 90.0
 @export var water_color: Color = Color(0.029, 0.267, 1.0, 0.894)
 @export var ice_color: Color = Color(0.416, 0.6, 1.0, 0.871)
 
@@ -14,11 +14,11 @@ func _ready() -> void:
 	melt()
 
 func _on_body_entered(body: Node) -> void:
-	print("player entered water")
+	#print("player entered water")
 	bodies_in_flow.append(body)
 
 func _on_body_exited(body: Node) -> void:
-	print("player left water")
+	#print("player left water")
 	bodies_in_flow.erase(body)
 
 func _process(_delta: float) -> void:
@@ -30,10 +30,10 @@ func _process(_delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if not is_iced:
-		var angular_speed_rad := deg_to_rad(angular_speed_deg)
-		flow_dir = flow_dir.rotated(angular_speed_rad * delta).normalized()
+		#var angular_speed_rad := deg_to_rad(angular_speed_deg)
+		#flow_dir = flow_dir.rotated(angular_speed_rad * delta).normalized()
 
-		var strength := 300.0
+		var strength := 1500.0
 		for body in bodies_in_flow:
 			_push_body(body, strength, delta)
 
@@ -45,7 +45,8 @@ func _push_body(body: Node, strength: float, delta: float) -> void:
 	if body is RigidBody2D:
 		body.apply_central_force(push)
 	elif body is CharacterBody2D:
-		body.velocity += push * delta
+		body.water_force += push * delta
+		#body.velocity += push * delta
 	elif "velocity" in body:
 		body.velocity += push * delta
 

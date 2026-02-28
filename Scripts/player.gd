@@ -7,6 +7,7 @@ const SCREEN_BORDERS : Vector2 = Vector2(1920, 850)
 var facing_right = true
 
 var wind_force: int = 0
+var water_force: Vector2 = Vector2.ZERO
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -34,7 +35,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED + wind_force
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED) + wind_force
-	
+	#handle water interactions 
+	velocity += water_force
+	water_force = Vector2.ZERO
 	move_and_slide()
 
 func sprite_logic():

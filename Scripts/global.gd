@@ -1,6 +1,6 @@
 extends Node
 
-const LEVELS : Array = ["res://Scenes/Levels/Level1.tscn"]
+const LEVELS : Array = ["res://Scenes/Levels/Level1.tscn","res://Scenes/Levels/Level2.tscn"]
 var current_level: int = 0
 
 func next_level_safe():
