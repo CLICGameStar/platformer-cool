@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b1liuf4uisngq"]
+
+[ext_resource type="Script" uid="uid://dxvhxh8hgy2t" path="res://Scripts/Levels/level.gd" id="1_5lnup"]
+[ext_resource type="Texture2D" uid="uid://k50kglg8ouio" path="res://Assets/Sprites/Backgrounds/spring.png" id="2_l0mwj"]
+[ext_resource type="PackedScene" uid="uid://cbu4rj585njyo" path="res://Scenes/player.tscn" id="3_4nh8f"]
+[ext_resource type="PackedScene" uid="uid://ctuwgusan4cjf" path="res://Scenes/Objects/level_end.tscn" id="4_etd3f"]
+[ext_resource type="PackedScene" uid="uid://du0o73op1m1gg" path="res://Scenes/Player2_hud.tscn" id="5_d3u4r"]
+
+[node name="Level" type="Node2D" unique_id=1966597664]
+script = ExtResource("1_5lnup")
+
+[node name="Background" type="TextureRect" parent="." unique_id=482654732]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_l0mwj")
+
+[node name="Player" parent="." unique_id=762219858 instance=ExtResource("3_4nh8f")]
+position = Vector2(75, 622)
+
+[node name="LevelEnd" parent="." unique_id=1374902904 instance=ExtResource("4_etd3f")]
+position = Vector2(1825, 120)
+
+[node name="Player2HUD" parent="." unique_id=1943083624 instance=ExtResource("5_d3u4r")]
+
+[connection signal="new_season" from="Player2HUD" to="." method="change_season"]

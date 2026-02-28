@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dg5ye41djb80f"]
+
+[ext_resource type="Script" uid="uid://c0bablxfyfyl0" path="res://Scripts/cherry_tree.gd" id="1_vinsm"]
+[ext_resource type="PackedScene" uid="uid://kxsg2j1ij5w7" path="res://Scenes/Objects/cherry.tscn" id="2_p01kb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2mqq6"]
+
+[node name="cherry_tree" type="Node2D" unique_id=1441613479]
+script = ExtResource("1_vinsm")
+cherry_object = ExtResource("2_p01kb")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=268251677]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1033630477]
+shape = SubResource("RectangleShape2D_2mqq6")
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D" unique_id=985979843]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
