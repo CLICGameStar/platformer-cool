@@ -13,6 +13,7 @@ signal wind(force: int)
 func _ready():
 	for button_name in unused_buttons:
 		$Player2HUD.hide_button(button_name)
+	connect_water()
 
 
 func change_season(season: Player2.Seasons):
@@ -27,6 +28,11 @@ func change_season(season: Player2.Seasons):
 		Player2.Seasons.WINTER:
 			winter()
 
+
+func connect_water():
+	get_tree().get_nodes_in_group("waterflows").map(func(waterflow): 
+		melt.connect(waterflow.melt)
+		freeze.connect(waterflow.freeze))
 
 func spring():
 	wind.emit(0)
