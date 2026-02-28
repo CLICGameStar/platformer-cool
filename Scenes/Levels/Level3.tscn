@@ -1,0 +1,93 @@
+[gd_scene format=4 uid="uid://ctp3trrn511qv"]
+
+[ext_resource type="PackedScene" uid="uid://b1liuf4uisngq" path="res://Scenes/Levels/Level.tscn" id="1_y77v7"]
+[ext_resource type="PackedScene" uid="uid://bpef3jyqe5ccf" path="res://Scenes/immovable_platform.tscn" id="2_6rkx2"]
+[ext_resource type="PackedScene" uid="uid://ciqdesbnmum7p" path="res://Scenes/movable_platform.tscn" id="3_y6rnf"]
+[ext_resource type="PackedScene" uid="uid://fm01c6cpdors" path="res://Scenes/Objects/water.tscn" id="4_c01y6"]
+
+[sub_resource type="Curve2D" id="Curve2D_3gtua"]
+_data = {
+"points": PackedVector2Array(31.139307, -111.15925, -31.139307, 111.15925, 1005, 1037, 40.281284, 39.973717, -40.281284, -39.973717, 807, 1138, 0, 0, 0, 0, 436, 1079, 17.5692, 51.731537, -17.5692, -51.731537, 316.33554, 1006.8196, 111.271614, -3.9042668, -111.271614, 3.9042668, 143, 916.9828)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_c01y6"]
+_data = {
+"points": PackedVector2Array(21.442339, -88.54311, -21.442339, 88.54311, 690, 1101.3447, 32.2146, -0.26598215, -32.2146, 0.26598215, 597, 1190.0978, 0.87535286, 33.338768, -0.87535286, -33.338768, 514, 1137.6528, 13.333332, -111.24693, -13.333332, 111.24693, 361, 1165.8925)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_ve7n4"]
+_data = {
+"points": PackedVector2Array(0.77005434, -85.56374, -0.77005434, 85.56374, 254, 981.32635, -74.88576, -0.25120735, 74.88576, 0.25120735, 360, 1166.9009, 0, 0, 0, 0, 484, 1013.6002, 0, 0, 0, 0, 487, 975.275)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_0kf4d"]
+_data = {
+"points": PackedVector2Array(26.935781, 37.815266, -26.935781, -37.815266, 420, 1129.5844, -47.99291, -2.4199042, 47.99291, 2.4199042, 425, 995.44617, -32.206104, 1.5990994, 32.206104, -1.5990994, 726, 996.4547)
+}
+point_count = 3
+
+[node name="Level" unique_id=1966597664 instance=ExtResource("1_y77v7")]
+unused_buttons = Array[String](["Red", "Purple"])
+
+[node name="Player" parent="." index="1" unique_id=762219858]
+position = Vector2(1817, 624)
+
+[node name="LevelEnd" parent="." index="2" unique_id=1374902904]
+position = Vector2(995, 330)
+
+[node name="Spikes" parent="." index="4" unique_id=16896656]
+tile_map_data = PackedByteArray("AAAdAAwAAAAAAAAAADAdAAsAAAAAAAAAAAAOAAkAAAAAAAAAAAAOAAoAAAAAAAAAADAPAAkAAAAAAAAAAAAPAAoAAAAAAAAAADAQAAkAAAAAAAAAAAAQAAoAAAAAAAAAADAKAAQAAAAAAAAAADAJAAQAAAAAAAAAADAJAAMAAAAAAAAAAAAKAAMAAAAAAAAAAAA=")
+
+[node name="Platforms" type="Node" parent="." index="5" unique_id=476705608]
+
+[node name="ImmovablePlatform1" parent="Platforms" index="0" unique_id=341470419 instance=ExtResource("2_6rkx2")]
+position = Vector2(1840, 668)
+
+[node name="ImmovablePlatform4" parent="Platforms" index="1" unique_id=1746931434 instance=ExtResource("2_6rkx2")]
+position = Vector2(1035, 378)
+
+[node name="ImmovablePlatform2" parent="Platforms" index="2" unique_id=738300832 instance=ExtResource("2_6rkx2")]
+position = Vector2(1118, 753)
+
+[node name="ImmovablePlatform3" parent="Platforms" index="3" unique_id=2029039072 instance=ExtResource("2_6rkx2")]
+position = Vector2(914, 753)
+
+[node name="Platform1" parent="Platforms" index="4" unique_id=1464240811 instance=ExtResource("3_y6rnf")]
+position = Vector2(1089, -268.2024)
+scale = Vector2(1, 0.99151516)
+curve = SubResource("Curve2D_3gtua")
+speed = 1.0
+
+[node name="Platform2" parent="Platforms" index="5" unique_id=1000851410 instance=ExtResource("3_y6rnf")]
+position = Vector2(-54, -421)
+scale = Vector2(1, 0.99151516)
+curve = SubResource("Curve2D_c01y6")
+speed = 1.0
+
+[node name="Platform3" parent="Platforms" index="6" unique_id=1266740625 instance=ExtResource("3_y6rnf")]
+position = Vector2(-183, -514)
+scale = Vector2(1, 0.99151516)
+curve = SubResource("Curve2D_ve7n4")
+speed = 1.0
+
+[node name="Platform4" parent="Platforms" index="7" unique_id=1919712749 instance=ExtResource("3_y6rnf")]
+position = Vector2(107, -619)
+scale = Vector2(1, 0.99151516)
+curve = SubResource("Curve2D_0kf4d")
+speed = 0.5
+
+[node name="Waterflows" type="Node" parent="." index="6" unique_id=669843110]
+
+[node name="Waterflow1" parent="Waterflows" index="0" unique_id=1268120202 groups=["waterflows"] instance=ExtResource("4_c01y6")]
+position = Vector2(737, 760)
+scale = Vector2(0.5, 1)
+flow_dir = Vector2(0, -1)
+is_iced = false
+
+[connection signal="blue" from="Player2HUD" to="Platforms/Platform1" method="move"]
+[connection signal="green" from="Player2HUD" to="Platforms/Platform4" method="move"]
+[connection signal="orange" from="Player2HUD" to="Platforms/Platform3" method="move"]
+[connection signal="yellow" from="Player2HUD" to="Platforms/Platform2" method="move"]

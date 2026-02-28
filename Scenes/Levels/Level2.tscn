@@ -16,13 +16,16 @@ point_count = 4
 script = ExtResource("2_5iseo")
 unused_buttons = Array[String](["Orange", "Yellow", "Purple", "Green", "Blue"])
 
+[node name="LevelEnd" parent="." index="2" unique_id=1374902904]
+position = Vector2(1814, 148)
+
 [node name="Platforms" type="Node" parent="." index="5" unique_id=1887890146]
 
 [node name="ImmovablePlatform1" parent="Platforms" index="0" unique_id=1698517060 instance=ExtResource("7_u5eb6")]
 position = Vector2(404, 816)
 
 [node name="ImmovablePlatform2" parent="Platforms" index="1" unique_id=2049136855 instance=ExtResource("7_u5eb6")]
-position = Vector2(1863, 167)
+position = Vector2(1859, 195)
 
 [node name="ImmovablePlatform3" parent="Platforms" index="2" unique_id=463672101 instance=ExtResource("7_u5eb6")]
 position = Vector2(155, 688)
