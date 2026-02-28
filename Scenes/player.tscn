@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://cbu4rj585njyo"]
+[gd_scene format=3 uid="uid://cbu4rj585njyo"]
 
 [ext_resource type="Script" uid="uid://cwyglcc1dn5n0" path="res://Scripts/player.gd" id="1_vgqql"]
 [ext_resource type="Texture2D" uid="uid://cqddil01g4vdg" path="res://Assets/Sprites/GameStarCube/CubeGameStar.png" id="2_fkybt"]
+[ext_resource type="Texture2D" uid="uid://dha28w02hhff7" path="res://Assets/Sprites/GameStarCube/cubeCrouch.png" id="2_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://bm7cpka5yaj7r" path="res://Assets/Sprites/GameStarCube/characterIdle.png" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://i7fpxbkcii7o" path="res://Assets/Sprites/GameStarCube/characterWalk.png" id="4_3smsa"]
 
@@ -104,6 +105,14 @@ region = Rect2(832, 0, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_x3wgy")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_otbr7")
 }],
 "loop": true,
@@ -187,15 +196,22 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
+size = Vector2(36, 36)
+
+[node name="Player" type="CharacterBody2D" unique_id=59541914]
 script = ExtResource("1_vgqql")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="NormalCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1856725664]
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_t355s")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=225907377]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_otbr7")
-animation = &"walk"
-frame_progress = 0.27308425
+animation = &"crouch"
+frame_progress = 0.91673404
+
+[node name="crouchCollisionShape2D" type="CollisionShape2D" parent="." unique_id=739240940]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_fkybt")
