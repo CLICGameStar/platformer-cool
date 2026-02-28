@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bx8jht25bvaps"]
+[gd_scene format=3 uid="uid://bx8jht25bvaps"]
 
 [ext_resource type="Script" uid="uid://c4mbdbj3huv2u" path="res://Scripts/Levels/level1.gd" id="1_3ipdw"]
 [ext_resource type="Texture2D" uid="uid://k50kglg8ouio" path="res://Assets/Sprites/Backgrounds/spring.png" id="1_4d3fe"]
@@ -26,46 +26,46 @@ _data = {
 }
 point_count = 6
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" unique_id=1175282369]
 script = ExtResource("1_3ipdw")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1957693294]
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_4d3fe")
 
-[node name="Player" parent="." instance=ExtResource("2_3ipdw")]
+[node name="Player" parent="." unique_id=1534112655 instance=ExtResource("2_3ipdw")]
 position = Vector2(75, 622)
 
-[node name="LevelEnd" parent="." instance=ExtResource("3_8h4de")]
+[node name="LevelEnd" parent="." unique_id=1634348348 instance=ExtResource("3_8h4de")]
 position = Vector2(1825, 120)
 
-[node name="Player2HUD" parent="." instance=ExtResource("4_jcebb")]
+[node name="Player2HUD" parent="." unique_id=94750720 instance=ExtResource("4_jcebb")]
 
-[node name="Platforms" type="Node" parent="."]
+[node name="Platforms" type="Node" parent="." unique_id=1271810693]
 
-[node name="Platform1" parent="Platforms" instance=ExtResource("5_f3nwb")]
+[node name="Platform1" parent="Platforms" unique_id=780657379 instance=ExtResource("5_f3nwb")]
 position = Vector2(26, -308)
 curve = SubResource("Curve2D_dmpbk")
 speed = 1.0
 
-[node name="Platform2" parent="Platforms" instance=ExtResource("5_f3nwb")]
+[node name="Platform2" parent="Platforms" unique_id=1416714845 instance=ExtResource("5_f3nwb")]
 position = Vector2(1043, -585)
 curve = SubResource("Curve2D_r66ge")
 speed = 1.0
 
-[node name="Platform3" parent="Platforms" instance=ExtResource("5_f3nwb")]
+[node name="Platform3" parent="Platforms" unique_id=313560648 instance=ExtResource("5_f3nwb")]
 position = Vector2(1193, -456)
 curve = SubResource("Curve2D_oi5um")
 speed = 1.0
 
-[node name="ImmovablePlatform1" parent="Platforms" instance=ExtResource("6_57lp3")]
+[node name="ImmovablePlatform1" parent="Platforms" unique_id=1918941597 instance=ExtResource("6_57lp3")]
 position = Vector2(909, 704)
 
-[node name="ImmovablePlatform2" parent="Platforms" instance=ExtResource("6_57lp3")]
+[node name="ImmovablePlatform2" parent="Platforms" unique_id=2125108721 instance=ExtResource("6_57lp3")]
 position = Vector2(1863, 167)
 
-[node name="ImmovablePlatform3" parent="Platforms" instance=ExtResource("6_57lp3")]
+[node name="ImmovablePlatform3" parent="Platforms" unique_id=1924618359 instance=ExtResource("6_57lp3")]
 position = Vector2(155, 688)
 
 [connection signal="blue" from="Player2HUD" to="Platforms/Platform3" method="move"]
