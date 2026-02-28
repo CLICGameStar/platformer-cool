@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cxtwrvnxjvbsi"]
 
 [ext_resource type="PackedScene" uid="uid://b1liuf4uisngq" path="res://Scenes/Levels/Level.tscn" id="1_0ryud"]
+[ext_resource type="Script" uid="uid://8lt44vm7tyib" path="res://Scripts/Levels/level2.gd" id="2_5iseo"]
 [ext_resource type="PackedScene" uid="uid://ciqdesbnmum7p" path="res://Scenes/movable_platform.tscn" id="6_ngp1c"]
 [ext_resource type="PackedScene" uid="uid://bpef3jyqe5ccf" path="res://Scenes/immovable_platform.tscn" id="7_u5eb6"]
 [ext_resource type="PackedScene" uid="uid://fm01c6cpdors" path="res://Scenes/Objects/water.tscn" id="8_lmdar"]
@@ -12,9 +13,10 @@ _data = {
 point_count = 4
 
 [node name="Level" unique_id=1966597664 instance=ExtResource("1_0ryud")]
+script = ExtResource("2_5iseo")
 unused_buttons = Array[String](["Orange", "Yellow", "Purple", "Green", "Blue"])
 
-[node name="Platforms" type="Node" parent="." index="4" unique_id=1887890146]
+[node name="Platforms" type="Node" parent="." index="5" unique_id=1887890146]
 
 [node name="ImmovablePlatform1" parent="Platforms" index="0" unique_id=1698517060 instance=ExtResource("7_u5eb6")]
 position = Vector2(404, 816)
@@ -36,7 +38,7 @@ position = Vector2(562, -494)
 curve = SubResource("Curve2D_smuj1")
 speed = 3.0
 
-[node name="Waterflows" type="Node" parent="." index="5" unique_id=1278974169]
+[node name="Waterflows" type="Node" parent="." index="6" unique_id=1278974169]
 
 [node name="Waterflow1" parent="Waterflows" index="0" unique_id=1268120202 groups=["waterflows"] instance=ExtResource("8_lmdar")]
 position = Vector2(364, 678)

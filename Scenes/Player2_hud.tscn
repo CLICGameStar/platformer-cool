@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c4h72t01gblu2" path="res://Assets/Sprites/Buttons/OrangePressed.png" id="11_506v8"]
 [ext_resource type="Texture2D" uid="uid://0cciwdpgi3k5" path="res://Assets/Sprites/Buttons/PurpleButton.png" id="12_vfr8x"]
 [ext_resource type="Texture2D" uid="uid://uro1mh8opu2k" path="res://Assets/Sprites/Buttons/PurplePressed.png" id="13_o1dv4"]
-[ext_resource type="Texture2D" uid="uid://cxohw3rn2yg6c" path="res://Assets/Sprites/winter_icon.png" id="15_vfr8x"]
+[ext_resource type="Texture2D" uid="uid://bbt0trqg6ef5l" path="res://Assets/Sprites/spring_icon.png" id="15_vfr8x"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1943083624]
 script = ExtResource("1_vfr8x")
