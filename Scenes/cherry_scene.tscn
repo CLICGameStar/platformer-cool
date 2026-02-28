@@ -1,19 +1,33 @@
 [gd_scene format=3 uid="uid://cytifsp3oe6s4"]
 
+[ext_resource type="Script" uid="uid://cc8qwqsu247bs" path="res://Scripts/cherry_scene.gd" id="1_hyqb8"]
 [ext_resource type="PackedScene" uid="uid://bpef3jyqe5ccf" path="res://Scenes/immovable_platform.tscn" id="1_xqh54"]
 [ext_resource type="PackedScene" uid="uid://cbu4rj585njyo" path="res://Scenes/player.tscn" id="2_op4il"]
 [ext_resource type="PackedScene" uid="uid://dg5ye41djb80f" path="res://Scenes/Objects/cherry_tree.tscn" id="4_hyqb8"]
+[ext_resource type="PackedScene" uid="uid://du0o73op1m1gg" path="res://Scenes/Player2_hud.tscn" id="5_6f0eb"]
+[ext_resource type="Texture2D" uid="uid://k50kglg8ouio" path="res://Assets/Sprites/Backgrounds/spring.png" id="6_qdttf"]
 
 [node name="CherryScene" type="Node2D" unique_id=1377195164]
+script = ExtResource("1_hyqb8")
+
+[node name="Background" type="TextureRect" parent="." unique_id=538518589]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("6_qdttf")
 
 [node name="Player" parent="." unique_id=1583328109 instance=ExtResource("2_op4il")]
-position = Vector2(417, 784)
+position = Vector2(422, 449)
 
 [node name="platform1" parent="." unique_id=332638482 instance=ExtResource("1_xqh54")]
-position = Vector2(395, 856)
+position = Vector2(400, 521)
 
 [node name="platform2" parent="." unique_id=1278754942 instance=ExtResource("1_xqh54")]
-position = Vector2(1075, 857)
+position = Vector2(1080, 522)
 
-[node name="cherry_tree" parent="." unique_id=1441613479 instance=ExtResource("4_hyqb8")]
-position = Vector2(358, 838)
+[node name="cherry_tree" parent="." unique_id=1441613479 groups=["cherry_trees"] instance=ExtResource("4_hyqb8")]
+position = Vector2(363, 503)
+
+[node name="Player2HUD" parent="." unique_id=1943083624 instance=ExtResource("5_6f0eb")]
+
+[connection signal="wind" from="." to="Player" method="change_wind_force"]
+[connection signal="new_season" from="Player2HUD" to="." method="change_season"]

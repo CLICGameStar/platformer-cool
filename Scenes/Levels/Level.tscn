@@ -22,4 +22,5 @@ position = Vector2(1825, 120)
 
 [node name="Player2HUD" parent="." unique_id=1943083624 instance=ExtResource("5_d3u4r")]
 
+[connection signal="wind" from="." to="Player" method="change_wind_force"]
 [connection signal="new_season" from="Player2HUD" to="." method="change_season"]
