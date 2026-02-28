@@ -11,6 +11,7 @@
 script = ExtResource("1_hyqb8")
 
 [node name="Background" type="TextureRect" parent="." unique_id=538518589]
+z_index = -2
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("6_qdttf")
